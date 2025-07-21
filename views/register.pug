@@ -3,19 +3,19 @@ extends layout
 block content
   h1 Register
 
-  form(action="/register" method="POST")
+  if error
+    p(style="color: red") #{error}
+
+  form(action="/register" method="POST" autocomplete="on")
     div
       label(for="name") Name:
-      input(type="text" name="name" required)
-    
+      input(type="text" name="name" required autocomplete="name")
     div
       label(for="email") Email:
-      input(type="email" name="email" required)
-    
+      input(type="email" name="email" required autocomplete="email")
     div
       label(for="password") Password:
-      input(type="password" name="password" required)
-    
+      input(type="password" name="password" required autocomplete="new-password")
     button(type="submit") Register
 
   p

@@ -31,6 +31,22 @@ app.use(
     cookie: { maxAge: 1000 * 60 * 60 },
   })
 );
+
+app.use((req, res, next) => {
+  res.locals.user = req.session.userId;
+  next();
+});
+
+// Redirect root to /login
+app.get("/", (req, res) => {
+  if (req.session.userId) {
+    // Render a dashboard or welcome page
+    res.render("dashboard", { user: req.session.userId });
+  } else {
+    res.redirect("/login");
+  }
+});
+
 app.use("/", authRoutes);
 app.use("/api", adminRoutes);
 app.use("/api", commentRoutes);

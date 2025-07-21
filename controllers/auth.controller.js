@@ -12,8 +12,9 @@ const processLogin = async (req, res) => {
     const user = await authService.login({ email, password });
     req.session.userId = user.id;
     req.session.userRole = user.role;
-    return res.status(200).json({ message: "Login Successful" });
-  } catch (error) {
+    // return res.status(200).json({ message: "Login Successful" });
+    return res.redirect("/")
+    } catch (error) {
     if (error.message === "Account doesn't exist") {
       return res.status(404).json({ message: error.message });
     }
