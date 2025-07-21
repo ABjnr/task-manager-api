@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title My App
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  body
+    header
+      h2 My App Name
+      nav
+        ul
+          li: a(href="/") Home
+          li: a(href="/login") Login
+          li: a(href="/register") Register
+
+    main
+      block content
+
+    footer
+      p © #{new Date().getFullYear()} My App. All rights reserved.
