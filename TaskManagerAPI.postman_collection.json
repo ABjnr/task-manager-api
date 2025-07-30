@@ -1,0 +1,166 @@
+{
+  "info": {
+    "_postman_id": "task-manager-api-collection",
+    "name": "Task Manager API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "API collection for Task Manager app. Base URL: http://localhost:2000"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Render Login Page",
+          "request": { "method": "GET", "url": "http://localhost:2000/login" }
+        },
+        {
+          "name": "Process Login",
+          "request": { "method": "POST", "url": "http://localhost:2000/login" }
+        },
+        {
+          "name": "Render Register Page",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:2000/register"
+          }
+        },
+        {
+          "name": "Process Registration",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:2000/register"
+          }
+        },
+        {
+          "name": "Logout",
+          "request": { "method": "GET", "url": "http://localhost:2000/logout" }
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Get User Details",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:2000/api/users"
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:2000/api/users/:id/delete"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "List All Users (Admin)",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:2000/api/admin/users"
+          }
+        },
+        {
+          "name": "List All Tasks (Admin)",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:2000/api/admin/tasks"
+          }
+        },
+        {
+          "name": "List All Comments (Admin)",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:2000/api/admin/comments"
+          }
+        },
+        {
+          "name": "Get User, Task, and Comment Details (Admin)",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:2000/api/admin/users/details"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Task",
+      "item": [
+        {
+          "name": "Get All Tasks (Logged In User)",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:2000/api/tasks"
+          }
+        },
+        {
+          "name": "Create Task",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:2000/api/tasks"
+          }
+        },
+        {
+          "name": "Get Task With Comments By ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:2000/api/tasks/:taskId"
+          }
+        },
+        {
+          "name": "Update Task",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:2000/api/tasks/:taskId"
+          }
+        },
+        {
+          "name": "Delete Task",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:2000/api/tasks/:taskId"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comment",
+      "item": [
+        {
+          "name": "Get Comments For Task",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:2000/api/tasks/:taskId/comments"
+          }
+        },
+        {
+          "name": "Add Comment To Task",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:2000/api/tasks/:taskId/comments"
+          }
+        },
+        {
+          "name": "Update Comment",
+          "request": {
+            "method": "PUT",
+            "url": "http://localhost:2000/api/tasks/:taskId/comments/:commentId"
+          }
+        },
+        {
+          "name": "Delete Comment",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:2000/api/comments/:commentId"
+          }
+        }
+      ]
+    }
+  ]
+}
